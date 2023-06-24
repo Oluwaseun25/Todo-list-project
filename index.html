@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list</title>
-        <link rel="stylesheet" href="assets/css/todos.css">
+        <link rel="stylesheet" href="assets/css/todolist.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <script src="assets/js/lib/jquery-3.7.0.min.js"></script>  
 </head>
@@ -14,10 +14,13 @@
 
 
 <div id="container">
-  <h1>TO-DO LIST<i class="fa fa-plus" aria-hidden="true"></i></h1>
+  <div class="header">
+    <h1 class="heading">TO-DO LIST<i class="fa fa-plus" aria-hidden="true"></i></h1>
   
-  <input type="text" placeholder="Add New Todo">
-
+    <input class="input" type="text" placeholder="Add New Todo">
+  </div>
+ 
+<div class="todoDiv">
   <ul>
     <li><span><i class="fa fa-trash" aria-hidden="true"></i></span> Go to class</li>
     <li><span><i class="fa fa-trash" aria-hidden="true"></i></span> Visit your friend</li>
@@ -30,6 +33,9 @@
     <li><span><i class="fa fa-trash" aria-hidden="true"></i></span> Play fifa</li>
   </ul>
 
+
+</div>
+  
 
 </div>
 
