@@ -1,21 +1,18 @@
 $(document).ready(function() {
-    // Event handler for toggling class on li elements
-    $("ul").on("click", "li", function() {
+    function toggleListItemClass() {
       $(this).toggleClass("listDesign");
-    });
+    }
   
-    // Event handler for removing li elements
-    $("ul").on("click", "span", function(event) {
+    function removeListItem(event) {
       $(this)
         .parent()
         .fadeOut(400, function() {
           $(this).remove();
         });
       event.stopPropagation();
-    });
+    }
   
-    // Event handler for adding new todo items
-    $("input[type='text']").on("keypress", function(event) {
+    function addNewTodoItem(event) {
       if (event.which === 13) {
         var todoText = $(this).val().trim();
   
@@ -30,11 +27,15 @@ $(document).ready(function() {
           $("ul").append(newTodo);
         }
       }
-    });
+    }
   
-    // Event handler for toggling input visibility
-    $("h1 > i").on("click", function() {
+    function toggleInputVisibility() {
       $("input[type='text']").fadeToggle(400);
-    });
+    }
+  
+    $("ul").on("click", "li", toggleListItemClass);
+    $("ul").on("click", "span", removeListItem);
+    $("input[type='text']").on("keypress", addNewTodoItem);
+    $("h1 > i").on("click", toggleInputVisibility);
   });
   
